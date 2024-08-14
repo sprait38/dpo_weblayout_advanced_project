@@ -1,0 +1,112 @@
+.banner {
+  margin-inline: auto;
+  margin-bottom: 127px;
+  padding: 32px 12px 112px;
+  position: relative;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    padding-block: 152px;
+    padding-inline: 36px;
+    margin-bottom: 35px;
+  }
+
+  @media (min-width: 1024px) {
+    padding-block: 154px 150px;
+    padding-inline: 36px;
+  }
+
+  @media (min-width: 1400px) {
+    padding-inline: calc((100vw - 1280px) / 2);
+  }
+
+  &__img {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    & > * {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    margin-block: 0;
+    max-width: 200px;
+    font-family: 'Playfair Display', Helvetica, sans-serif;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 1.2;
+    color: var(--clr-gold);
+
+    @media (min-width: 768px) {
+      max-width: 510px;
+      font-size: 60px;
+    }
+  }
+
+  &__text {
+    margin-block: 0;
+    max-width: 200px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.2;
+    color: var(--clr-white);
+
+    @media (min-width: 768px) {
+      margin-bottom: 49px;
+      max-width: 510px;
+      font-size: 48px;
+      line-height: 1.2;
+    }
+  }
+
+  &__link {
+    padding: 22px;
+    position: absolute;
+    inset: auto 12px -91px;
+    width: calc(100% - 24px);
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1;
+    color: var(--clr-white);
+    background-color: var(--clr-primary);
+    border-radius: 10px;
+    transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out,
+      border-color 0.1s ease-in-out;
+
+    @media (min-width: 768px) {
+      padding-inline: 31.5px;
+      position: initial;
+      align-self: flex-start;
+      width: auto;
+    }
+
+    &:hover {
+      background-color: var(--clr-primary-light);
+      border-color: var(--clr-primary-light);
+    }
+
+    &:focus-visible {
+      background-color: var(--clr-primary-light);
+      border-color: var(--clr-primary-shade);
+      outline: none;
+    }
+
+    &:active {
+      background-color: var(--clr-primary-shade);
+      border-color: var(--clr-primary-shade);
+    }
+
+    &:disabled {
+      color: var(--clr-gray);
+      background-color: var(--clr-gray-middle);
+      border-color: var(--clr-gray-middle);
+    }
+  }
+}

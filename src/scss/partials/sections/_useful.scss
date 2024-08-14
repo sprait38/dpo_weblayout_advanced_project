@@ -1,0 +1,234 @@
+.useful {
+  padding-block: 42px 35px;
+
+  @media (min-width: 768px) {
+    padding-block-start: 35px;
+  }
+
+  &__title {
+    margin-block: 0 26px;
+    grid-column: 1 / 7;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1;
+    z-index: 2;
+
+    @media (min-width: 768px) {
+      margin-bottom: 27px;
+      grid-column: 1 / 6;
+      font-size: 32px;
+    }
+
+    @media (min-width: 1024px) {
+      margin-bottom: 26px;
+      grid-column: 1 / 9;
+    }
+
+    @media (min-width: 1400px) {
+      grid-column: 1 / 12;
+    }
+  }
+
+  &__slider {
+    grid-column: 1 / 7;
+    padding-bottom: 48px;
+    width: 100%;
+
+    @media (min-width: 768px) {
+      margin-top: -58px;
+      padding-top: 58px;
+      padding-bottom: 0;
+    }
+
+    @media (min-width: 1024px) {
+      grid-column: 1 / 10;
+    }
+
+    @media (min-width: 1400px) {
+      grid-column: 1 / 13;
+    }
+
+    .swiper-button-prev {
+      left: calc(50% - 38px);
+      top: auto;
+      bottom: 0;
+      width: 32px;
+      height: 32px;
+      transform: rotate(180deg);
+
+      @media (min-width: 768px) {
+        bottom: auto;
+        top: 22px;
+        left: auto;
+        right: 45px;
+      }
+
+      &::after {
+        content: '';
+      }
+    }
+
+    .swiper-button-next {
+      right: calc(50% - 38px);
+      top: auto;
+      bottom: 0;
+      width: 32px;
+      height: 32px;
+
+      @media (min-width: 768px) {
+        bottom: auto;
+        top: 22px;
+        right: 0;
+      }
+
+      &::after {
+        content: '';
+      }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      &:hover > svg > path {
+        stroke: var(--clr-white);
+      }
+
+      &:hover > svg > circle {
+        fill: var(--clr-primary);
+      }
+
+      &:focus-visible {
+        outline: none;
+      }
+
+      &:focus-visible > svg > path {
+        stroke: var(--clr-white);
+      }
+
+      &:focus-visible > svg > circle {
+        fill: var(--clr-primary-light);
+      }
+
+      &:active > svg > path {
+        stroke: var(--clr-white);
+      }
+
+      &:active > svg > circle {
+        fill: var(--clr-primary-shade);
+        stroke: var(--clr-primary-shade);
+      }
+
+      & > svg {
+        display: block;
+
+        & > path,
+        & > circle {
+          transition: stroke 0.1s ease-in-out, fill 0.1s ease-in-out;
+        }
+      }
+    }
+
+    .swiper-button-prev.swiper-button-disabled,
+    .swiper-button-next.swiper-button-disabled {
+      opacity: 1;
+
+      & > svg > path,
+      & > svg > circle {
+        stroke: var(--clr-gray);
+        fill: none;
+      }
+    }
+  }
+
+  .slide {
+    .article {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background-color: var(--clr-gray-light);
+      border-radius: 10px;
+      overflow: hidden;
+
+      &__img {
+        height: 202px;
+
+        @media (min-width: 1400px) {
+          height: 426px;
+        }
+      }
+
+      &__picture {
+        width: 100%;
+        height: 100%;
+
+        & > * {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      &__data {
+        padding: 30px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 30px;
+
+        @media (min-width: 1400px) {
+          gap: 36px;
+        }
+      }
+
+      &__title {
+        margin-block: 0;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 22px;
+
+        @media (min-width: 1400px) {
+          font-size: 24px;
+          line-height: 33px;
+        }
+      }
+
+      &__btn {
+        padding: 17px 33px;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1;
+        color: var(--clr-primary);
+        border: 2px solid var(--clr-primary);
+        border-radius: 10px;
+        transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out,
+          border-color 0.1s ease-in-out;
+
+        &:hover {
+          color: var(--clr-white);
+          background-color: var(--clr-primary);
+          border-color: var(--clr-primary);
+        }
+
+        &:focus-visible {
+          color: var(--clr-white);
+          background-color: var(--clr-primary-light);
+          border-color: var(--clr-primary);
+          outline: none;
+        }
+
+        &:active {
+          color: var(--clr-white);
+          background-color: var(--clr-primary-shade);
+          border-color: var(--clr-primary-shade);
+        }
+
+        &:disabled {
+          color: var(--clr-gray);
+          background-color: var(--clr-gray-middle);
+          border-color: var(--clr-gray-middle);
+        }
+      }
+    }
+  }
+}
